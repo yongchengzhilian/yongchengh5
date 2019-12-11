@@ -1,4 +1,5 @@
-# yiyeyun
+# 关于rem
+见/lib/rem.js
 
 ## Project setup
 ```

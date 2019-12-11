@@ -1,13 +1,13 @@
 const path = require('path')
 module.exports = {
-  publicPath: '/zhengfu',
+  publicPath: '/pay',
   devServer: {
     proxy: {
       '/api': {
-        target: `http://47.107.36.107:8088`,
+        target: `https://www.aidou.online`,
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/api': '/api'
         }
       }
     }
@@ -17,7 +17,7 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
-        path.resolve(__dirname, './src/assets/less/variable.less')
+        path.resolve(__dirname, './src/assets/less/index.less')
       ]
     }
   }

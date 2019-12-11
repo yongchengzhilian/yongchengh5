@@ -1,0 +1,66 @@
+// todo 为了保证750 可以按照设计稿尺寸进行单位转换
+
+@base: 32;
+.width(@width){
+  width: @width / @base;
+}
+.height(@height){
+  height: @height / @base;
+}
+.border-radius(@size){
+  border-radius: @size / @base;
+}
+.min-height(@height){
+  min-height: @height / @base;
+}
+.line-height(@height) {
+  line-height: @height / @base;
+}
+.margin-bottom(@bottom) {
+  margin-bottom: @bottom / @base;
+}
+.padding(@padding){
+  padding: @padding / @base;
+}
+.bottom(@bottom){
+  bottom: @bottom / @base;
+}
+.font-size(@size){
+  font-size: @size / @base;
+}
+.margin-top(@top){
+  margin-top: @top / @base;
+}
+.margin-right(@right){
+  margin-right: @right / @base;
+}
+.padding-left(@left){
+  padding-left: @left / @base;
+}
+.padding-right(@right){
+  padding-right: @right / @base;
+}
+.border-bottom(@size){
+  border-bottom: @size/@base solid @bg-color;
+}
+.margin(@top, @left){
+  margin: @top / @base @left / @base;
+}
+.margin(@size){
+  margin: @size / @base;
+}
+.padding(@top, @left){
+  padding: @top / @base @left / @base;
+}
+.padding-top(@top){
+  padding-top: @top / @base;
+}
+//.border-bottom(@size){
+//  border-bottom: @size / @base
+//}
+.top(@top){
+  top: @top / @base;
+}
+.left(@left){
+  left: @left / @base;
+}
