@@ -9,14 +9,14 @@
         <div class="name">{{ userInfo.nnnnn }}</div>
         <div class="content">
           <span class="shengyu">剩余红线</span>
-          <span>{{ userInfo.YYYY }}</span>
+          <span>{{ userInfo.yyyy }}</span>
         </div>
       </div>
     </div>
     <div class="buy-box">
-      <div class="din price" v-if="userInfo.cccc > 3">￥19.9</div>
-      <div class="din price" v-if="userInfo.cccc < 4">￥9.9</div>
-      <div class="din text-throw" v-if="userInfo.cccc < 4">￥19.8</div>
+      <div v-if="userInfo.cccc >= 3" class="din price">￥19.9</div>
+      <div v-if="userInfo.cccc < 3" class="din price">￥9.9</div>
+      <div v-if="userInfo.cccc < 3" class="din text-throw">￥19.8</div>
     </div>
     <div class="buy-box mt-20">
       <div class="buy-button" @click="buy">立即购买</div>
@@ -88,11 +88,17 @@ export default {
     }
   },
   created() {
-    window.open('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb55e464ea69e3136&redirect_uri=https://www.aidou.online/api/app/jsPay/getOAuth&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1')
+    // window.open()
   },
   async mounted() {
     this.uid = getParameterByName('userId')
-    this.getUserinfo()
+    // console.log(this.uid)
+    if (+this.uid === 100) {
+      location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb55e464ea69e3136&redirect_uri=https://www.aidou.online/api/app/jsPay/getOAuth&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1'
+    } else {
+      this.getUserinfo()
+    }
+
     // Dialog({ message: '提示' })
     // Dialog.alert('dddd')
   },
