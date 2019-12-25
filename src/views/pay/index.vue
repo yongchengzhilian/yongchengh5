@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="buy-box">
-      <div v-if="userInfo.cccc >= 3" class="din price">￥19.9</div>
+      <div v-if="userInfo.cccc >= 3" class="din price">￥19.8</div>
       <div v-if="userInfo.cccc < 3" class="din price">￥9.9</div>
       <div v-if="userInfo.cccc < 3" class="din text-throw">￥19.8</div>
     </div>
@@ -96,6 +96,7 @@ export default {
     if (+this.uid === 100) {
       location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb55e464ea69e3136&redirect_uri=https://www.aidou.online/api/app/jsPay/getOAuth&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1'
     } else {
+      Dialog({ message: this.uid })
       this.getUserinfo()
     }
 
