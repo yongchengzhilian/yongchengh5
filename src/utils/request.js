@@ -41,17 +41,15 @@ service.interceptors.response.use(
     const res = response.data
 
     // if the custom code is not 20000, it is judged as an error.
-    if (res.code !== 20000 && res.message !== '用户未登录') {
+    if (res.errno === 0) {
+      return res.data
+    } else {
       Message({
         message: res.message || 'Error',
         type: 'error',
         duration: 5 * 1000
       })
       return Promise.reject(res)
-    } else if (res.code !== 20000) {
-
-    } else {
-      return res
     }
   },
   error => {

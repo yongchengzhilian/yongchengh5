@@ -2,21 +2,21 @@
   <div>
     <div class="header">
       <img
-        :src="userInfo.ffff"
+        :src="avatar"
         class="image"
       >
       <div>
-        <div class="name">{{ userInfo.nnnnn }}</div>
+        <div class="name">{{ name }}</div>
         <div class="content">
           <span class="shengyu">剩余红线</span>
-          <span>{{ userInfo.yyyy }}</span>
+          <span>{{ count }}</span>
         </div>
       </div>
     </div>
     <div class="buy-box">
-      <div v-if="userInfo.cccc >= 3" class="din price">￥19.8</div>
-      <div v-if="userInfo.cccc < 3" class="din price">￥9.9</div>
-      <div v-if="userInfo.cccc < 3" class="din text-throw">￥19.8</div>
+      <div v-if="orderNum >= 3" class="din price">￥19.8</div>
+      <div v-if="orderNum < 3" class="din price">￥9.9</div>
+      <div v-if="orderNum < 3" class="din text-throw">￥19.8</div>
     </div>
     <div class="buy-box mt-20">
       <div class="buy-button" @click="buy">立即购买</div>
@@ -72,7 +72,7 @@
 <script>
 import {
   getPayInfo,
-  getUserInfo
+  getPayNum
 } from '../../api/pay'
 import {
   getParameterByName
@@ -84,30 +84,32 @@ export default {
   data() {
     return {
       uid: '',
-      userInfo: {}
+      name: '',
+      avatar: '',
+      orderNum: '',
+      count: ''
     }
   },
   created() {
     // window.open()
   },
   async mounted() {
-    this.uid = getParameterByName('userId')
+    this.uid = getParameterByName('id')
+    this.name = getParameterByName('name')
+    this.avatar = getParameterByName('avatar')
+    this.count = getParameterByName('count')
     // console.log(this.uid)
     if (+this.uid === 100) {
       location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb55e464ea69e3136&redirect_uri=https://www.aidou.online/api/app/jsPay/getOAuth&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1'
     } else {
       Dialog({ message: this.uid })
-      this.getUserinfo()
     }
+    this.orderNum = await getPayNum(this.uid)
 
     // Dialog({ message: '提示' })
     // Dialog.alert('dddd')
   },
   methods: {
-    async getUserinfo() {
-      const result = await getUserInfo(this.uid)
-      this.userInfo = result.data
-    },
     async buy() {
       const data = await getPayInfo(this.uid)
       const result = data.data.data

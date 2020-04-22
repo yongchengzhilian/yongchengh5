@@ -1,13 +1,11 @@
 import request from '@/utils/request'
 
-export function getPayInfo(userId) {
+export function getPayNum(uid) {
   return request({
-    url: `app/order/pay`,
+    url: `yongcheng/order/orderNum`,
     method: 'post',
     data: {
-      platform: 'h5',
-      itemId: 1,
-      userId
+      uid
     }
   })
 }
