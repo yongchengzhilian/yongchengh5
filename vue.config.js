@@ -1,13 +1,13 @@
 const path = require('path')
 module.exports = {
-  publicPath: '/pay',
+  publicPath: '/',
   devServer: {
     proxy: {
-      '/api': {
-        target: `https://www.aidou.online`,
+      '/yongcheng': {
+        target: `https://www.qike.site`,
         changeOrigin: true,
         pathRewrite: {
-          '^/api': '/api'
+          '^/yongcheng': '/yongcheng'
         }
       }
     }

@@ -30,7 +30,11 @@
     </div>
     <div class="container">
       <div class="title">红线说明</div>
-      <div class="mt20 tip-box">
+      <div class="tip-box mt20">
+        <div class="icon icon4" />
+        <div class="font-26-999"><b>第一次资料审核通过赠送1根红线</b></div>
+      </div>
+      <div class="tip-box">
         <div class="icon icon1" />
         <div class="font-26-999">红线是本平台用于查看对方联系方式的道具, 购买后不可退还</div>
       </div>
@@ -41,10 +45,6 @@
       <div class="tip-box">
         <div class="icon icon3" />
         <div class="font-26-999">每条红线保证获取一名异性的联系方式, 若对方不同意红线立即退回, 若对方无反应，红线将在24小时后退回</div>
-      </div>
-      <div class="tip-box">
-        <div class="icon icon4" />
-        <div class="font-26-999">第一次提交资料审核成功后可免费获得1根红线</div>
       </div>
     </div>
     <div class="container">
@@ -98,21 +98,12 @@ export default {
     this.name = getParameterByName('name')
     this.avatar = getParameterByName('avatar')
     this.count = getParameterByName('count')
-    // console.log(this.uid)
-    if (+this.uid === 100) {
-      location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb55e464ea69e3136&redirect_uri=https://www.aidou.online/api/app/jsPay/getOAuth&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1'
-    } else {
-      Dialog({ message: this.uid })
-    }
-    this.orderNum = await getPayNum(this.uid)
-
-    // Dialog({ message: '提示' })
-    // Dialog.alert('dddd')
+    const res = await getPayNum(this.uid)
+    this.orderNum = res.data
   },
   methods: {
     async buy() {
-      const data = await getPayInfo(this.uid)
-      const result = data.data.data
+      const result = await getPayInfo(this.uid)
       wx.config({
         debug: false,
         appId: result.appId,

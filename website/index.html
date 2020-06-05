@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#6BC2D4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>甬城良缘-宁波本地轻婚恋平台</title>
+    <meta name="keywords" content="甬城之恋,甬城良缘,宁波交友,宁波相亲,宁波恋爱,宁波本地恋爱平台,宁波找对象,宁波本地相亲平台,交友,婚恋,恋爱,脱单">
+    <meta name="description" content="宁波本地亲婚恋平台，实名认证，资料严格审核，单身的朋友进来看看吧">
+    <script>
+        var UA = navigator.userAgent
+        var IS_MOBILE = /iphone|ipod|ipad/i.test(UA) || /android/i.test(UA)
+        if (IS_MOBILE) {
+            location.replace('https://www.qike.site/website/m/index.html')
+        }
+    </script>
+    <link rel="icon" href="./imgs/favicon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            min-width: 1024px;
+        }
+
+        body {
+            font-weight: 500;
+            color: white;
+            line-height: 1;
+            background-color: #F2F2F2;
+        }
+
+        header {
+            min-width: 1024px;
+            width: 100%;
+            height: 5.54rem;
+            background: url("./imgs/bg.png");
+            background-size: cover;
+            justify-content: center;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-title {
+            font-size: .27rem;
+        }
+
+        .logo::before {
+            content: "";
+            display: block;
+            width: .61rem;
+            height: .61rem;
+            background: url("./imgs/logo.png");
+            background-size: cover;
+            margin-right: .3rem;
+        }
+
+        .header-desc {
+            font-size: .12rem;
+            margin-top: .1rem;
+        }
+
+        .header-slogan {
+            margin-top: .29rem;
+            padding-left: .91rem;
+            font-size: 0;
+        }
+
+        .header-slogan span {
+            font-size: .11rem;
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: .14rem;
+        }
+
+        .separator {
+            width: .01rem;
+            height: .13rem;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 .13rem;
+        }
+
+        .header-share {
+            margin-top: .69rem;
+            font-size: .12rem;
+        }
+
+        .header-share .flex-col {
+            width: 1.46rem;
+            height: 1.74rem;
+            background-color: #1C1C1C;
+            align-items: center;
+            border-radius: .12rem;
+        }
+
+        img {
+            margin-top: .12rem;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        .qr-code {
+            margin-left: .31rem;
+        }
+
+        .header-hint {
+            margin-top: .16rem;
+            font-size: .1rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .clip-area {
+            margin-left: 1.42rem;
+            position: relative;
+            width: 3.03rem;
+            height: 3.78rem;
+        }
+
+        .demo-item {
+            position: absolute;
+            left: 0;
+            border-radius: .12rem;
+            background-position: center, center;
+            background-repeat: no-repeat, no-repeat;
+            transition: transform 1s, opacity 1s;
+        }
+
+        .main::after,
+        .secondary::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1.65rem;
+            height: 3.58rem;
+            border: 0.01rem solid #EBEBEB;
+            top: .09rem;
+            left: .09rem;
+            border-radius: .12rem;
+        }
+
+        .main {
+            z-index: 2;
+            transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+            background-size: 1.65rem 3.58rem, cover;
+            width: 1.87rem;
+            height: 3.78rem;
+        }
+
+        .secondary {
+            z-index: 1;
+            opacity: .3;
+            background-size: 1.65rem 3.58rem, cover;
+            width: 1.87rem;
+            height: 3.78rem;
+        }
+
+        .left {
+            transform: translate3d(-.72rem, 0, 0) scale3d(.85, .85, .85);
+        }
+
+        .right {
+            transform: translate3d(.72rem, 0, 0) scale3d(.85, .85, .85);
+        }
+
+        .demo-item:first-child {
+            background-image: url("./imgs/1.png"), url('./imgs/clip_bg.png');
+        }
+
+        .demo-item:nth-child(2) {
+            background-image: url("./imgs/2.png"), url('./imgs/clip_bg.png');
+        }
+
+        .demo-item:nth-child(3) {
+            background-image: url("./imgs/3.png"), url('./imgs/clip_bg.png');
+        }
+
+        .demo-item:nth-child(4) {
+            background-image: url("./imgs/4.png"), url('./imgs/clip_bg.png');
+        }
+
+        /* .demo-item:last-child {
+          background-image: url("./imgs/5.png"), url('./imgs/clip_bg.png');
+        } */
+
+        .cover {
+            height: 5.55rem;
+            justify-content: center;
+            padding-right: 1.5rem;
+        }
+
+        .cover::before {
+            display: block;
+            content: '';
+            width: 5.6rem;
+            height: 3.95rem;
+            background: url("./imgs/cover.png");
+            background-size: cover;
+            margin-right: .62rem;
+        }
+
+        .cover-content::before {
+            display: block;
+            content: '';
+            width: .47rem;
+            height: .04rem;
+            background-color: #000;
+            margin-bottom: .17rem;
+        }
+
+        .cover-content {
+            font-weight: bold;
+            color: #000;
+            font-size: .17rem;
+            align-items: flex-end;
+        }
+
+        .cover-content strong {
+            font-size: .22rem;
+            color: #6BC2D4;
+            min-width: .55rem;
+            display: inline-block;
+        }
+
+        .cover-desc {
+            font-weight: 500;
+            margin-top: .13rem;
+        }
+
+        .register {
+            margin-top: .15rem;
+            background: url("./imgs/btn_bg.png");
+            width: 1.95rem;
+            height: .67rem;
+            line-height: .6rem;
+            background-size: cover;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            font-size: .12rem;
+        }
+
+        .criteria {
+            background-color: #fff;
+            height: 5.14rem;
+            margin-right: 1.59rem;
+        }
+
+        .criteria>div {
+            height: 100%;
+            align-items: center;
+            transform: translateX(.59rem);
+        }
+
+        .criteria-item {
+            align-items: center;
+        }
+
+        .criteria-item:not(:first-child) {
+            margin-left: 1.12rem;
+        }
+
+        .criteria-item::before {
+            content: '';
+            display: block;
+            width: .74rem;
+            height: .74rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .criteria-school::before {
+            background-image: url("./imgs/icon_school.png");
+        }
+
+        .criteria-recommend::before {
+            background-image: url("./imgs/icon_recommend.png");
+        }
+
+        .criteria-each-like::before {
+            background-image: url("./imgs/icon_each_like.png");
+        }
+
+        .criteria-title {
+            color: #000;
+            font-size: .19rem;
+            margin-top: .26rem;
+        }
+
+        .criteria-desc {
+            color: #999;
+            font-size: .11rem;
+            margin-top: .14rem;
+            max-width: 1.56rem;
+            line-height: .16rem;
+            min-height: .47rem;
+        }
+
+        .criteria-register {
+            margin-top: .56rem;
+        }
+
+        .user-list {
+            height: 5.93rem;
+            font-size: .13rem;
+            padding-left: 12%;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        .user {
+            width: 2.16rem;
+            background-color: #fff;
+            margin-left: .22rem;
+            align-items: center;
+            padding: .27rem .16rem .18rem;
+            box-sizing: border-box;
+        }
+
+        .user-avatar {
+            width: 1.83rem;
+            height: 1.41rem;
+            background-color: #D8D8D8;
+        }
+
+        .user-title {
+            color: #000;
+            margin-top: .15rem;
+            margin-bottom: .08rem;
+            text-align: left;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .user-desc {
+            color: #999;
+            height: .94rem;
+            line-height: .16rem;
+            overflow: hidden;
+            -webkit-line-clamp: 6;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            font-size: .11rem;
+        }
+
+        footer {
+            height: 2.61rem;
+            background-color: #1A1A1A;
+            font-weight: 500;
+        }
+
+        footer::after,
+        footer::before {
+            display: block;
+            content: '';
+            width: 100%;
+            height: .02rem;
+            background-color: #313131;
+        }
+
+        .footer-content {
+            justify-content: center;
+        }
+
+        .footer-left {
+            padding-top: .23rem;
+            padding-bottom: .22rem;
+        }
+
+        .footer-left-title {
+            font-size: .27rem;
+        }
+
+        .footer-left-desc {
+            font-size: .12rem;
+            margin: .1rem 0;
+        }
+
+        .footer-item {
+            color: rgba(255, 255, 255, .5);
+            font-size: .09rem;
+            margin-top: .08rem;
+        }
+        .gong-an::before {
+            display: block;
+            content: '';
+            width: .16rem;
+            height: .16rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: .06rem;
+            background-image: url("./imgs/gongan.png")
+        }
+
+        .footer-company {
+            margin-top: .53rem;
+        }
+
+        .footer-company::before {
+            background-image: url("./imgs/icon_company.png");
+        }
+
+        .footer-address::before {
+            background-image: url("./imgs/icon_address.png");
+        }
+
+        .footer-phone::before {
+            background-image: url("./imgs/icon_phone.png");
+        }
+
+        .footer-separator {
+            margin-left: 2.03rem;
+            margin-right: .36rem;
+            width: .02rem;
+            height: 1.71rem;
+            background-color: #313131;
+        }
+
+        .footer-share {
+            font-size: .12rem;
+            font-weight: bold;
+        }
+
+        .footer-share>.flex-col {
+            align-items: center;
+            background-color: #3C3C3C;
+            border-radius: .12rem;
+            width: 1.46rem;
+            height: 1.74rem;
+        }
+
+        .dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .21);
+            z-index: 10;
+            transform: translate3d(0, 100%, 0);
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        .dialog.show {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+            transition: opacity .3s;
+        }
+
+        .dialog-wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            width: 2.56rem;
+            height: 3.05rem;
+            background-color: #fff;
+            border-radius: .12rem;
+            padding-top: .19rem;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .dialog-close {
+            height: .19rem;
+            background: url("./imgs/icon_close.png") no-repeat;
+            background-size: .19rem 100%;
+            background-position: right center;
+            margin-right: .2rem;
+        }
+
+        .dialog-code {
+            width: 1.66rem;
+            height: 1.66rem;
+            margin: .02rem auto 0;
+        }
+
+        .dialog-code img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dialog-desc {
+            font-size: .13rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: .26rem;
+        }
+
+        @keyframes show {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes show {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .code-img {
+            font-size: .1rem;
+            background-color: #fff;
+            color: #000;
+            opacity: 0;
+        }
+
+        .code-img.loaded {
+            animation: show .5s;
+            opacity: 1;
+        }
+        .xiaochengxu{
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+<header class="flex">
+    <div>
+        <div class="logo flex">
+            <div>
+                <div class="header-title">甬城良缘</div>
+                <div class="header-desc">宁波本地轻婚恋平台</div>
+            </div>
+        </div>
+        <div class="header-slogan flex">
+            <span>人群更高端</span>
+            <span class="separator"></span>
+            <span>资料更丰富</span>
+            <span class="separator"></span>
+            <span>交友更严肃</span>
+        </div>
+        <div class="flex header-share">
+            <div class="mini-code flex-col">体验小程序<img src="./imgs/xiaochengxu.jpg" class="xiaochengxu" alt="甬城良缘"></div>
+            <div class="qr-code flex-col">关注公众号<img src="./imgs/qr_code.jpg"></div>
+        </div>
+        <div class="header-hint">请使用微信扫一扫</div>
+    </div>
+    <div class="clip-area">
+        <div class="demo-item main"></div>
+        <div class="demo-item secondary left"></div>
+        <div class="demo-item secondary right"></div>
+        <div class="demo-item"></div>
+    </div>
+</header>
+<div class="flex cover">
+    <div class="flex-col cover-content">
+        <div><strong>3321</strong>位男嘉宾 <strong>2134</strong>位女嘉宾</div>
+        <div class="cover-desc">正在甬城良缘相遇、相识、相知</div>
+        <div class="register">注册甬城良缘</div>
+    </div>
+</div>
+<div class="criteria">
+    <div class="flex-col">
+        <div class="flex">
+            <div class="flex-col criteria-item criteria-school">
+                <div class="criteria-title">学历认证 严审资料</div>
+                <div class="criteria-desc">身份和学历认证，人工审核个人资料，真实、丰富，让你更了解TA!</div>
+            </div>
+            <div class="flex-col criteria-item criteria-recommend">
+                <div class="criteria-title">每日推荐 喜欢一下</div>
+                <div class="criteria-desc">每天推荐最符合你的优质用户，遇到心仪的TA就赶紧“喜欢”一下</div>
+            </div>
+            <div class="flex-col criteria-item criteria-each-like">
+                <div class="criteria-title">互相喜欢 开启聊天</div>
+                <div class="criteria-desc">双方互相喜欢即可开启聊天，只与对的人接触，节约时间，免除骚扰！</div>
+            </div>
+        </div>
+        <div class="register criteria-register">注册甬城良缘</div>
+    </div>
+</div>
+<!--<div class="flex user-list"></div>-->
+<footer class="flex-col">
+    <div class="flex footer-content">
+        <div class="footer-left flex-col">
+            <div class="footer-left-title">甬城良缘</div>
+            <div class="footer-left-desc">宁波轻婚恋交友平台</div>
+            <!-- <div class="flex footer-item footer-company">武汉微派网络科技有限公司</div>
+            <div class="flex footer-item footer-address">武汉市保利国际中心10楼</div>
+            <div class="flex footer-item footer-phone">027-65025800</div> -->
+            <div class="flex footer-item">© 2020 版权所有</div>
+            <div class="flex footer-item">网站备案/许可证号：<a target="_blank" href="http://www.beian.miit.gov.cn" style="text-decoration: none; color: rgba(255, 255, 255, .5);">浙ICP备19051346号-1</a></div>
+            <div class="flex footer-item gong-an"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42018502003857" style="text-decoration: none; color: rgba(255, 255, 255, .5);"> </a></div>
+        </div>
+        <div class="footer-separator"></div>
+        <div class="flex footer-share">
+            <div class="mini-code flex-col">体验小程序<img src="./imgs/xiaochengxu.jpg" class="xiaochengxu" alt="甬城良缘"></div>
+            <div class="qr-code flex-col">关注公众号<img src="./imgs/qr_code.jpg"></div>
+        </div>
+    </div>
+</footer>
+<div class="dialog">
+    <div class="dialog-wrap">
+        <div class="dialog-close"></div>
+        <div class="dialog-code"><img src="./imgs/xiaochengxu.jpg" class="xiaochengxu" alt="甬城良缘"></div>
+        <div class="dialog-desc">微信扫一扫 体验小程序</div>
+    </div>
+</div>
+<script>
+    (function () {
+        function startPlaySlides() {
+            var SLIDE_PLAY_INTERVAL = 3000,
+                demoItems = document.querySelectorAll('.demo-item'),
+                itemCount = demoItems.length,
+                slideMainIdx = 0
+
+            function getIdx(offset) {
+                return slideMainIdx + offset >= itemCount ? slideMainIdx + offset - itemCount : slideMainIdx + offset
+            }
+
+            function playSlides() {
+                var preMainClassList = demoItems[slideMainIdx].classList
+                preMainClassList.remove('main')
+
+                var preLeftClassList = demoItems[getIdx(1)].classList
+                preLeftClassList.remove('secondary')
+                preLeftClassList.remove('left')
+                preLeftClassList.add('main')
+
+                var preRightClassList = demoItems[getIdx(2)].classList
+                preRightClassList.remove('right')
+                preRightClassList.add('left')
+
+                var nextRightClassList = demoItems[getIdx(3)].classList
+                nextRightClassList.add('secondary')
+                nextRightClassList.add('right')
+            }
+
+            playSlides()
+            setInterval(function () {
+                slideMainIdx++
+                if (slideMainIdx >= itemCount) {
+                    slideMainIdx = 0
+                }
+                playSlides()
+            }, SLIDE_PLAY_INTERVAL)
+        }
+        startPlaySlides()
+
+        function bindRegister() {
+            var dialogClassList = document.querySelector('.dialog').classList,
+                registerDoms = document.querySelectorAll('.register')
+            registerDoms.forEach(function (dom) {
+                dom.addEventListener('click', function () {
+                    dialogClassList.add('show')
+                }, false)
+            })
+
+            var dialogCloseDom = document.querySelector('.dialog-close')
+            dialogCloseDom.addEventListener('click', function () {
+                dialogClassList.remove('show')
+            }, false)
+        }
+        bindRegister()
+
+        function ajax(method, path, formData = null) {
+            return new Promise(function (resolve) {
+                var xhr = new XMLHttpRequest()
+                xhr.open(method, 'https://wx-love-api.afunapp.com/' + path, true)
+                xhr.withCredentials = false
+                xhr.responseType = 'json'
+                xhr.onload = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var resp = xhr.response
+                        if (resp.code === 0) {
+                            resolve(resp.data)
+                        } else {
+                            console.error(resp)
+                        }
+                    }
+                }
+                xhr.send(formData)
+            })
+        }
+
+        function requestCertStats() {
+            var countDoms = document.querySelectorAll('.cover strong')
+            // ajax('POST', 'user/get_cert_stats').then(function (data) {
+            //     countDoms[0].innerHTML = data.male_num
+            //     countDoms[1].innerHTML = data.female_num
+            // })
+        }
+        requestCertStats()
+
+        function parseSource() {
+            try {
+                var search = location.search
+                return /source=([0-9a-zA-Z]+)/gi.exec(search)[1]
+            } catch (e) {
+                return ''
+            }
+        }
+
+        function qn(imgUrl, width, height) {
+            return imgUrl + '?imageMogr2/thumbnail/!' + width + 'x' + height + 'r'
+        }
+
+        function requestMiniCode() {
+            var codeImgDoms = document.querySelectorAll('.code-img'),
+                source = parseSource()
+            ajax('GET', 'config/get_qr_code' + (source ? '?source=' + source : '')).then(function (data) {
+                var img = new Image()
+                img.src = qn(data.code_url, 300, 300)
+                img.onload = function () {
+                    codeImgDoms.forEach(function (dom) {
+                        dom.classList.add('loaded')
+                        dom.setAttribute('src', img.src)
+                    })
+                }
+            })
+        }
+        requestMiniCode()
+
+        function requestNews() {
+            var newsWrap = document.querySelector('.user-list'),
+                USER_TPL = '<div class="flex-col user">' +
+                    '<img class="user-avatar" src="{IMG}"/>' +
+                    '<div class="user-title">{TITLE}</div>' +
+                    '<div class="user-desc">{DESC}</div>' +
+                    '</div>'
+            ajax('GET', 'config/get_news_list').then(function (data) {
+                var tpl = ''
+                data.entries.map(function (entry) {
+                    tpl += USER_TPL
+                        .replace('{IMG}', qn(entry.img, 390, 300))
+                        .replace('{TITLE}', entry.title)
+                        .replace('{DESC}', entry.info)
+                })
+                newsWrap.innerHTML = tpl
+
+                newsWrap.querySelectorAll('.user').forEach(function (userDom, index) {
+                    var entry = data.entries[index]
+                    userDom.addEventListener('click', function () {
+                        window.open(entry.url, entry.title)
+                    }, false)
+                })
+            })
+        }
+        requestNews()
+    })()
+</script>
+
+<script>
+    // 百度统计
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script")
+        hm.src = "https://hm.baidu.com/hm.js?9e212e29f28f62dd1ff8c786f8f73dec"
+        var s = document.getElementsByTagName("script")[0]
+        s.parentNode.insertBefore(hm, s)
+    })()
+</script>
+
+<!-- Global site tag (gtag.js) - Google Ads: 766315260 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-766315260"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-766315260');
+</script>
+</body>
+
+</html>

@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#6BC2D4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta content="telephone=no" name="format-detection">
+    <title>甬城良缘-宁波本地轻婚恋平台</title>
+    <meta name="keywords" content="甬城之恋,甬城良缘,宁波交友,宁波相亲,宁波恋爱,宁波本地恋爱平台,宁波找对象,宁波本地相亲平台,交友,婚恋,恋爱,脱单">
+    <meta name="description" content="宁波本地亲婚恋平台，实名认证，资料严格审核，单身的朋友进来看看吧">
+    <script>
+        var UA = navigator.userAgent
+        var IS_MOBILE = /iphone|ipod|ipad/i.test(UA) || /android/i.test(UA)
+        if (!IS_MOBILE) {
+            // location.replace('https://www.qike.site/website/index.html')
+        }
+    </script>
+    <link rel="icon" href="../imgs/favicon.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="./swiper.min.css"/>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        html {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: none;
+        }
+
+        body {
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-touch-callout: none;
+            -webkit-transform-style: preserve-3d;
+            -webkit-appearance: none;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page-1 {
+            background: url("../imgs/bg.png");
+            background-size: cover;
+            align-items: center;
+        }
+
+        .page-2, .page-3, .page-4 {
+            align-items: center;
+        }
+
+        .page-4 .flex-1 {
+            width: 100%;
+            align-items: center;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .white {
+            color: #fff;
+        }
+
+        .black {
+            color: #000;
+        }
+
+        .gray {
+            color: #999;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-1 {
+            flex-grow: 1;
+        }
+
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .fz-24 {
+            font-size: .24rem;
+        }
+
+        .fz-30 {
+            font-size: .3rem;
+        }
+
+        .slide-title {
+            font-size: .64rem;
+            line-height: .84rem;
+        }
+
+        .slide-desc {
+            margin-top: .22rem;
+            font-size: .28rem;
+            line-height: .4rem;
+        }
+
+        .demo-item {
+            background-position: center, center;
+            background-repeat: no-repeat, no-repeat;
+            transition: transform 1s;
+            left: 0;
+            top: 0;
+            position: absolute;
+            transform: translate3d(.9rem, 0, 0);
+        }
+
+        .demo-item:nth-child(1) {
+            background-image: url("../imgs/1.png"), url('../imgs/clip_bg.png');
+        }
+
+        .demo-item:nth-child(2) {
+            background-image: url("../imgs/2.png"), url('../imgs/clip_bg.png');
+        }
+
+        .demo-item:nth-child(3) {
+            background-image: url("../imgs/3.png"), url('../imgs/clip_bg.png');
+        }
+
+        .demo-item:nth-child(4) {
+            background-image: url("../imgs/4.png"), url('../imgs/clip_bg.png');
+        }
+
+        .demo-list {
+            width: 4.74rem;
+            height: 5.88rem;
+            margin: .78rem auto 0;
+            position: relative;
+        }
+
+        .main {
+            opacity: 1;
+            z-index: 2;
+            transform: translate3d(.9rem, 0, 0) scale3d(1, 1, 1);
+            width: 2.9rem;
+            height: 5.88rem;
+            background-size: 2.57rem 5.56rem, cover;
+        }
+
+        .secondary {
+            z-index: 1;
+            opacity: .3;
+            width: 2.9rem;
+            height: 5.88rem;
+            background-size: 2.57rem 5.56rem, cover;
+        }
+
+        .main::after, .secondary::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 2.57rem;
+            height: 5.562rem;
+            border: 0.01rem solid #EBEBEB;
+            top: .16rem;
+            left: .16rem;
+            border-radius: .2rem;
+        }
+
+        .left {
+            transform: translate3d(0, 0, 0) scale3d(.85, .85, .85);
+        }
+
+        .right {
+            transform: translate3d(1.8rem, 0, 0) scale3d(.85, .85, .85);
+        }
+
+        .slide-one-slogan {
+            margin-top: .54rem;
+            font-size: .24rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: .34rem;
+        }
+
+        .slide-one-slogan .separator {
+            width: .02rem;
+            height: .28rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 .28rem;
+        }
+
+        @keyframes upDown {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                transform: translate3d(0, .4rem, 0);
+            }
+        }
+
+        @-webkit-keyframes upDown {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                transform: translate3d(0, .4rem, 0);
+            }
+        }
+
+        .next-btn {
+            margin-top: .8rem;
+            width: .6rem;
+            height: .52rem;
+            background: url("./img/icon_next_grey.png");
+            background-size: cover;
+            animation: upDown 1s infinite;
+        }
+
+        .slide-two-slogan::before {
+            content: '';
+            display: block;
+            width: .96rem;
+            height: .84rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-right: .4rem;
+        }
+
+        .school {
+            margin-top: 1rem;
+        }
+
+        .school::before {
+            background-image: url("./img/icon_school.png");
+        }
+
+        .recommend::before {
+            background-image: url("./img/icon_recommend.png");
+        }
+
+        .each-like::before {
+            background-image: url("./img/icon_each_like.png");
+        }
+
+        .recommend, .each-like {
+            margin-top: .74rem;
+        }
+
+        .slide-two-slogan-title {
+            line-height: .42rem;
+        }
+
+        .slide-two-slogan-desc {
+            max-width: 4.1rem;
+            margin-top: .08rem;
+            line-height: .34rem;
+        }
+
+        .register {
+            margin-top: .52rem;
+            background: url("./img/btn_bg.png");
+            width: 4.2rem;
+            height: 1.44rem;
+            line-height: 1.28rem;
+            background-size: cover;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            font-size: .26rem;
+        }
+
+        .page-2 .next-btn {
+            background-image: url("./img/icon_next.png");
+            margin-top: .36rem;
+        }
+
+        .page-3 .next-btn {
+            background-image: url("./img/icon_next.png");
+            margin-top: .96rem;
+        }
+
+        .slide-three-title {
+            font-size: .26rem;
+        }
+
+        .slide-three-title strong {
+            font-size: .48rem;
+            color: #6BC2D4;
+        }
+
+        .slide-three-desc {
+            font-size: .24rem;
+            line-height: .34rem;
+            margin-top: .1rem;
+        }
+
+        .slide-three-separator {
+            margin-top: .2rem;
+            width: .74rem;
+            height: .06rem;
+            background-color: #000;
+        }
+
+        .article-list {
+            margin-top: .7rem;
+        }
+
+        .article-item {
+            background-color: #F5F5F5;
+            font-size: .28rem;
+            margin: .48rem .3rem 0;
+            padding: .24rem .2rem .26rem .28rem;
+            align-items: flex-start;
+        }
+
+        .article-name {
+            line-height: .4rem;
+            overflow-x: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 3.64rem;
+        }
+
+        .article-desc {
+            font-size: .24rem;
+            line-height: .34rem;
+            margin-top: .12rem;
+            overflow: hidden;
+            -webkit-line-clamp: 4;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+        .article-photo {
+            width: 2.58rem;
+            height: 1.99rem;
+            flex-shrink: 0;
+            background-color: #D8D8D8;
+        }
+
+        .article-right {
+            margin-left: .2rem;
+        }
+
+        @keyframes circle {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-270deg);
+            }
+        }
+
+        @-webkit-keyframes circle {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-270deg);
+            }
+        }
+
+        .refresh {
+            margin-top: .58rem;
+        }
+
+        .refresh::before {
+            content: '';
+            display: block;
+            width: .28rem;
+            height: .3rem;
+            background: url("./img/icon_refresh.png");
+            background-size: cover;
+            margin-right: .14rem;
+        }
+
+        .refresh.circle::before {
+            animation: circle .3s linear;
+        }
+
+        .slide-four-title {
+            font-size: .64rem;
+            line-height: .84rem;
+        }
+
+        .slide-four-desc {
+            font-size: .28rem;
+            margin-top: .22rem;
+            line-height: .4rem;
+        }
+
+        @keyframes show {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes show {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .code-img {
+            width: 3.4rem;
+            height: 3.4rem;
+            margin-top: .92rem;
+            /*opacity: 0;*/
+        }
+
+        .code-img.loaded {
+            animation: show .5s;
+            opacity: 1;
+        }
+
+        .scan {
+            font-size: .26rem;
+            margin-top: .38rem;
+        }
+
+        footer {
+            width: 100%;
+            height: 3.02rem;
+            background-color: #000;
+            color: rgba(255, 255, 255, .5);
+            font-size: .2rem;
+            position: relative;
+        }
+
+        footer::before, footer::after {
+            display: block;
+            content: '';
+            width: 100%;
+            height: .04rem;
+            background-color: #1F1F1F;
+            position: absolute;
+            left: 0;
+        }
+
+        footer::before {
+            top: .18rem;
+        }
+
+        footer::after {
+            bottom: .18rem;
+        }
+
+        .footer-item::before {
+            display: block;
+            content: '';
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: .06rem;
+        }
+
+        .company {
+            margin-top: .72rem;
+        }
+
+        .company::before {
+            width: .2rem;
+            height: .22rem;
+            background-image: url("./img/icon_company.png");
+        }
+
+        .address {
+            margin-top: .24rem;
+        }
+
+        .address::before {
+            width: .2rem;
+            height: .24rem;
+            background-image: url("./img/icon_address.png");
+        }
+
+        .phone {
+            margin-top: .22rem;
+            text-decoration: none;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .phone::before {
+            width: .26rem;
+            height: .24rem;
+            background-image: url("../imgs/icon_phone.png");
+        }
+
+        .footer-left {
+            margin-left: .74rem;
+        }
+
+        .qr-code {
+            width: 1.92rem;
+            height: 1.92rem;
+            background: url("../imgs/qr_code.jpg");
+            background-size: cover;
+            flex-shrink: 0;
+            margin-right: .46rem;
+        }
+
+        .dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: 10;
+            transform: translate3d(0, 100%, 0);
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        .dialog.show {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+            transition: opacity .3s;
+        }
+
+        .dialog-wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            width: 5.52rem;
+            height: 6.58rem;
+            background-color: #fff;
+            border-radius: .12rem;
+            padding-top: .4rem;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .dialog-wrap img {
+            width: 3.58rem;
+            height: 3.58rem;
+            margin: .3rem auto 0;
+        }
+
+        .dialog-close {
+            height: .4rem;
+            background: url("./img/icon_close.png") no-repeat;
+            background-size: .4rem 100%;
+            background-position: right center;
+            margin-right: .44rem;
+        }
+
+        .dialog-desc {
+            margin-top: .8rem;
+            font-size: .3rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div style="display: none;"><img src="./img/logo_share.png"/></div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide flex-col page-1">
+            <div class="slide-title bold white">宁波良缘</div>
+            <div class="slide-desc white">宁波本地轻婚恋平台</div>
+            <div class="demo-list">
+                <div class="demo-item secondary left"></div>
+                <div class="demo-item main"></div>
+                <div class="demo-item secondary right"></div>
+                <div class="demo-item"></div>
+            </div>
+            <div class="slide-one-slogan flex">
+                <div>人群更高端</div>
+                <div class="separator"></div>
+                <div>资料更丰富</div>
+                <div class="separator"></div>
+                <div>交友更严肃</div>
+            </div>
+            <div class="next-btn"></div>
+        </div>
+        <div class="swiper-slide flex-col page-2">
+            <div class="slide-title bold black">宁波良缘</div>
+            <div class="slide-desc black">宁波本地轻婚恋平台</div>
+            <div class="school slide-two-slogan flex">
+                <div class="flex-col">
+                    <div class="bold fz-30 black slide-two-slogan-title">学历认证 严审资料</div>
+                    <div class="fz-24 gray slide-two-slogan-desc">身份和学历认证，人工审核个人资料，真实、丰富，让你更了解TA!</div>
+                </div>
+            </div>
+            <div class="recommend slide-two-slogan flex">
+                <div class="flex-col">
+                    <div class="bold fz-30 black slide-two-slogan-title">每日推荐 喜欢一下</div>
+                    <div class="fz-24 gray slide-two-slogan-desc">每天推荐最符合你的优质用户，遇到心仪的TA就赶紧“喜欢”一下</div>
+                </div>
+            </div>
+            <div class="each-like slide-two-slogan flex">
+                <div class="flex-col">
+                    <div class="bold fz-30 black slide-two-slogan-title">互相喜欢 开启聊天</div>
+                    <div class="fz-24 gray slide-two-slogan-desc">双方互相喜欢即可开启聊天，只与对的人接触，节约时间，免除骚扰！</div>
+                </div>
+            </div>
+            <div class="register">注册宁波良缘</div>
+            <div class="next-btn"></div>
+        </div>
+        <div class="swiper-slide flex-col page-3 black">
+            <div class="slide-three-title"><strong>3321</strong>位男嘉宾 <strong>2134</strong>位女嘉宾</div>
+            <div class="slide-three-desc">正在宁波良缘相遇、相识、相知</div>
+            <div class="slide-three-separator"></div>
+            <div class="article-list"></div>
+            <div class="refresh flex gray fz-24">查看更多</div>
+            <div class="next-btn"></div>
+        </div>
+        <div class="swiper-slide flex-col page-4 black">
+            <div class="flex-1 flex-col">
+                <div class="slide-four-title bold">宁波良缘</div>
+                <div class="slide-four-desc">宁波本地轻婚恋平台</div>
+                <img class="code-img" src="../imgs/xiaochengxu.jpg" alt="宁波良缘">
+                <div class="gray scan">微信扫一扫</div>
+            </div>
+            <footer class="flex">
+                <div class="footer-left flex-1">
+                    <div class="footer-item flex company">宁波爱豆网络科技有限公司</div>
+                </div>
+                <div class="qr-code"></div>
+            </footer>
+        </div>
+    </div>
+</div>
+<div class="dialog">
+    <div class="dialog-wrap">
+        <div class="dialog-close"></div>
+        <img class="code-img" alt="宁波良缘"/>
+        <div class="dialog-desc bold">微信搜一搜「宁波良缘」</div>
+    </div>
+</div>
+<script>
+    (function() {
+        var clientWidth = document.documentElement.clientWidth || document.body.clientWidth
+        document.documentElement.style.fontSize = Math.min(80, 100 * (clientWidth / 750)) + 'px'
+    })()
+</script>
+<script type="text/javascript" src="./swiper.min.js"></script>
+<script>
+    new Swiper('.swiper-container', {
+        direction: 'vertical', // 垂直切换选项
+        threshold: 10,
+        effect: 'coverflow'
+    })
+
+    function startPlaySlides() {
+        var SLIDE_PLAY_INTERVAL = 3000,
+            demoItems = document.querySelectorAll('.demo-item'),
+            itemCount = demoItems.length,
+            lastGroup = [0, 1, 2]
+
+        function playSlides(direction) {
+            var leftClassList = demoItems[lastGroup[0]].classList
+            leftClassList.remove('secondary')
+            leftClassList.remove('left')
+
+            demoItems[lastGroup[1]].classList.remove('main')
+
+            var rightClassList = demoItems[lastGroup[2]].classList
+            rightClassList.remove('secondary')
+            rightClassList.remove('right')
+
+            lastGroup = lastGroup.map(item => {
+                if (direction > 0) {
+                    if (item + 1 >= itemCount) {
+                        return item + 1 - itemCount
+                    } else {
+                        return item + 1
+                    }
+                } else {
+                    if (item - 1 < 0) {
+                        return itemCount - 1
+                    } else {
+                        return item - 1
+                    }
+                }
+            })
+
+            leftClassList = demoItems[lastGroup[0]].classList
+            leftClassList.add('secondary')
+            leftClassList.add('left')
+
+            demoItems[lastGroup[1]].classList.add('main')
+
+            rightClassList = demoItems[lastGroup[2]].classList
+            rightClassList.add('secondary')
+            rightClassList.add('right')
+        }
+
+        playSlides(1)
+        setInterval(function() {
+            playSlides(1)
+        }, SLIDE_PLAY_INTERVAL)
+    }
+    startPlaySlides()
+
+    function ajax(method, path, formData = null) {
+        return new Promise(function(resolve) {
+            var xhr = new XMLHttpRequest()
+            xhr.open(method, 'https://wx-love-api.afunapp.com/' + path, true)
+            xhr.withCredentials = false
+            xhr.responseType = 'json'
+            xhr.onload = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var resp = xhr.response
+                    if (resp.code === 0) {
+                        resolve(resp.data)
+                    } else {
+                        console.error(resp)
+                    }
+                }
+            }
+            xhr.send(formData)
+        })
+    }
+
+    function requestCertStats() {
+        // var countDoms = document.querySelectorAll('.slide-three-title strong')
+        // ajax('POST', 'user/get_cert_stats').then(function(data) {
+        //     countDoms[0].innerHTML = data.male_num
+        //     countDoms[1].innerHTML = data.female_num
+        // })
+    }
+    requestCertStats()
+
+    function qn(imgUrl, width, height) {
+        return imgUrl + '?imageMogr2/thumbnail/!' + width + 'x' + height +'r'
+    }
+
+    var newEntries = [], sliceStart = 0, entriesLen = 0
+    function requestNews() {
+        ajax('GET', 'config/get_news_list').then(function(data) {
+            newEntries = data.entries
+            entriesLen = newEntries.length
+            refreshNews()
+        })
+    }
+
+    function refreshNews(e) {
+        if (e && e.target) {
+            var targetClassList = e.target.classList
+            targetClassList.add('circle')
+            setTimeout(function() {
+                targetClassList.remove('circle')
+            }, 300)
+        }
+
+        var newsWrap = document.querySelector('.article-list'),
+            USER_TPL =
+                '<div class="flex article-item">'
+                + '<img class="article-photo" src="{IMG}"/>'
+                + '<div class="article-right">'
+                + '<div class="article-name">{TITLE}</div>'
+                + '<div class="article-desc gray">{DESC}</div>'
+                + '</div>'
+                + '</div>'
+
+        var first = sliceStart >= entriesLen ? 0: sliceStart,
+            second = sliceStart + 1 >= entriesLen ? 0: sliceStart + 1,
+            tpl = '', sliceEntries = [newEntries[first], newEntries[second]]
+
+        sliceStart = second + 1
+        if (sliceStart >= entriesLen) {
+            sliceStart = 0
+        }
+
+        sliceEntries.map(function(entry) {
+            tpl += USER_TPL
+                .replace('{IMG}', qn(entry.img, 390, 300))
+                .replace('{TITLE}', entry.title)
+                .replace('{DESC}', entry.info)
+        })
+        newsWrap.innerHTML = tpl
+
+        newsWrap.querySelectorAll('.article-item').forEach(function(userDom, index) {
+            var entry = sliceEntries[index]
+            userDom.addEventListener('click', function() {
+                window.open(entry.url, entry.title)
+            }, false)
+        })
+    }
+
+    document.querySelector('.refresh').addEventListener('click', refreshNews, false)
+    requestNews()
+
+    function parseSource() {
+        try {
+            var search = location.search
+            return /source=([0-9a-zA-Z]+)/gi.exec(search)[1]
+        } catch (e) {
+            return ''
+        }
+    }
+
+    function requestMiniCode() {
+        // var codeImgDoms = document.querySelectorAll('.code-img'),
+        //     source = parseSource()
+        // ajax('GET', 'config/get_qr_code' + (source ? '?source=' + source: '')).then(function(data) {
+        //     var img = new Image()
+        //     img.src = qn(data.code_url, 300, 300)
+        //     img.onload = function() {
+        //         codeImgDoms.forEach(function(dom) {
+        //             dom.classList.add('loaded')
+        //             dom.setAttribute('src', img.src)
+        //         })
+        //     }
+        // })
+    }
+    requestMiniCode()
+
+    function bindRegister() {
+        var dialogClassList = document.querySelector('.dialog').classList,
+            registerDom = document.querySelector('.register')
+        registerDom.addEventListener('click', function() {
+            dialogClassList.add('show')
+        }, false)
+
+        var dialogCloseDom = document.querySelector('.dialog-close')
+        dialogCloseDom.addEventListener('click', function() {
+            dialogClassList.remove('show')
+        }, false)
+    }
+    bindRegister()
+</script>
+
+<script>
+    // 百度统计
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script")
+        hm.src = "https://hm.baidu.com/hm.js?9e212e29f28f62dd1ff8c786f8f73dec"
+        var s = document.getElementsByTagName("script")[0]
+        s.parentNode.insertBefore(hm, s)
+    })()
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Ads: 766315260 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-766315260"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-766315260');
+</script>
+</body>
+</html>
