@@ -25,7 +25,7 @@
       <div class="title">价格说明</div>
       <div class="tip-box mt20">
         <div class="icon icon2" />
-        <div class="font-26-999">新用户前3条红线半价</div>
+        <div class="font-26-999">新用户前3条红线半价,每条9.9元</div>
       </div>
     </div>
     <div class="container">
